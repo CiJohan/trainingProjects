@@ -139,7 +139,7 @@
     if(!_isDec){
         _isDec = YES;
         _decNum += _wholeNum;
-        _currNum.text = [[NSString alloc]initWithFormat:@"%@.",_currNum.text];
+        _currNum.text = [[NSString alloc]initWithFormat:@"%g",_decNum];
     }
     
 }
@@ -152,13 +152,19 @@
     if ([_currNum.text isEqualToString:@"0"]) {
         _history.text = @"";
         _operation = 0;
+        _fullNum = 0;
     }else{
         _currNum.text = @"0";
     }
 }
 
 -(void)doOperation{
-    float c = _wholeNum + _decNum;
+    float c;
+    if(_isDec){
+        c = _decNum;
+    }else{
+        c = _wholeNum;
+    }
     switch(_operation){
         case 0:
         case 1:
@@ -223,26 +229,49 @@
 }
 
 - (IBAction)sin:(id)sender {
-    
+    [self makeDecimal:self];
+    _decNum = sinf(_decNum);
+    //_currNum.text = [[NSString alloc]initWithFormat:@"%g",_decNum];
+    _history.text = [[NSString alloc]initWithFormat: @"%@sin(%@) ", _history.text, _currNum.text];
+    _currNum.text = @"";
+    [self equals:self];
 }
 
 - (IBAction)cos:(id)sender {
-    
+    [self makeDecimal:self];
+    _decNum = cosf(_decNum);
+    _history.text = [[NSString alloc]initWithFormat: @"%@cos(%@) ", _history.text, _currNum.text];
+    _currNum.text = @"";
+    [self equals:self];
 }
 
 - (IBAction)sqrt:(id)sender {
-    
+    [self makeDecimal:self];
+    _decNum = sqrtf(_decNum);
+    _history.text = [[NSString alloc]initWithFormat: @"%@sqrt(%@) ", _history.text, _currNum.text];
+    _currNum.text = @"";
+    [self equals:self];
 }
 
 - (IBAction)pi:(id)sender {
-    
+    [self makeDecimal:self];
+    if(_decNum != 0){
+        _decNum = _decNum * M_PI;
+        _history.text = [[NSString alloc]initWithFormat: @"%@%g * π ", _history.text, _decNum];
+        _currNum.text = @"";
+    }else{
+        _decNum = M_PI;
+        _history.text = [[NSString alloc]initWithFormat: @"%@π ", _history.text];
+        _currNum.text = @"";
+    }
+    [self equals:self];
 }
 
 - (IBAction)equals:(id)sender {
     [self doOperation];
+    _operation = 0;
     _history.text = [[NSString alloc] initWithFormat:@"%@%@ = ",_history.text,_currNum.text];
     _currNum.text = [[NSString alloc]initWithFormat:@"%g",_fullNum];
-    _fullNum = 0;
 }
 
 - (void)viewDidLoad {
