@@ -12,7 +12,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *history;
 @property (weak, nonatomic) IBOutlet UILabel *currNum;
 @property (nonatomic) float decNum;
-@property (nonatomic) int wholeNum;
 @property (nonatomic) float fullNum;
 @property (nonatomic) BOOL isDec;
 @property (nonatomic) int j;
@@ -22,124 +21,38 @@
 
 @implementation ViewController
 
-
-
-
-- (IBAction)thenNine:(id)sender{
+- (IBAction)number:(id)sender{
     if(_isDec){
-        _decNum = _decNum + 9/(10.0*_j);
+        _decNum = _decNum + [sender currentTitle].intValue/(10.0*_j);
         _j *= 10;
-        _currNum.text = [[NSString alloc]initWithFormat:@"%g", _decNum];
+        [self editOutput:1];
     }else{
-        _wholeNum = (_wholeNum * 10)+9;
-        _currNum.text = [[NSString alloc]initWithFormat:@"%i",_wholeNum];
+        _decNum = (_decNum * 10)+[sender currentTitle].intValue;
+        [self editOutput:1];
     }
 }
 
-- (IBAction)thenEight:(id)sender{
-    if(_isDec){
-        _decNum = _decNum + 8/(10.0*_j);
-        _j *= 10;
-        _currNum.text = [[NSString alloc]initWithFormat:@"%g", _decNum];
-    }else{
-        _wholeNum = (_wholeNum * 10)+8;
-        _currNum.text = [[NSString alloc]initWithFormat:@"%i",_wholeNum];
-    }
-}
-
-- (IBAction)thenSeven:(id)sender{
-    if(_isDec){
-        _decNum = _decNum + 7/(10.0*_j);
-        _j *= 10;
-        _currNum.text = [[NSString alloc]initWithFormat:@"%g", _decNum];
-    }else{
-        _wholeNum = (_wholeNum * 10)+7;
-        _currNum.text = [[NSString alloc]initWithFormat:@"%i",_wholeNum];
-    }
-}
-
-- (IBAction)thenSix:(id)sender{
-    if(_isDec){
-        _decNum = _decNum + 6/(10.0*_j);
-        _j *= 10;
-        _currNum.text = [[NSString alloc]initWithFormat:@"%g", _decNum];
-    }else{
-        _wholeNum = (_wholeNum * 10)+6;
-        _currNum.text = [[NSString alloc]initWithFormat:@"%i",_wholeNum];
-    }
-}
-
-- (IBAction)thenFive:(id)sender{
-    if(_isDec){
-        _decNum = _decNum + 5/(10.0*_j);
-        _j *= 10;
-        _currNum.text = [[NSString alloc]initWithFormat:@"%g", _decNum];
-    }else{
-        _wholeNum = (_wholeNum * 10)+5;
-        _currNum.text = [[NSString alloc]initWithFormat:@"%i",_wholeNum];
-    }
-}
-
-- (IBAction)thenFour:(id)sender{
-    if(_isDec){
-        _decNum = _decNum + 4/(10.0*_j);
-        _j *= 10;
-        _currNum.text = [[NSString alloc]initWithFormat:@"%g", _decNum];
-    }else{
-        _wholeNum = (_wholeNum * 10)+4;
-        _currNum.text = [[NSString alloc]initWithFormat:@"%i",_wholeNum];
-    }
-}
-
-- (IBAction)thenThree:(id)sender{
-    if(_isDec){
-        _decNum = _decNum + 3/(10.0*_j);
-        _j *= 10;
-        _currNum.text = [[NSString alloc]initWithFormat:@"%g", _decNum];
-    }else{
-        _wholeNum = (_wholeNum * 10)+3;
-        _currNum.text = [[NSString alloc]initWithFormat:@"%i",_wholeNum];
-    }
-}
-
-- (IBAction)thenTwo:(id)sender{
-    if(_isDec){
-        _decNum = _decNum + 2/(10.0*_j);
-        _j *= 10;
-        _currNum.text = [[NSString alloc]initWithFormat:@"%g", _decNum];
-    }else{
-        _wholeNum = (_wholeNum * 10)+2;
-        _currNum.text = [[NSString alloc]initWithFormat:@"%i",_wholeNum];
-    }
-}
-
-- (IBAction)thenOne:(id)sender{
-    if(_isDec){
-        _decNum = _decNum + 1/(10.0*_j);
-        _j *= 10;
-        _currNum.text = [[NSString alloc]initWithFormat:@"%g", _decNum];
-    }else{
-        _wholeNum = (_wholeNum * 10)+1;
-        _currNum.text = [[NSString alloc]initWithFormat:@"%i",_wholeNum];
-    }
-}
-
-- (IBAction)thenZero:(id)sender{
-    if(_isDec){
-        _decNum = _decNum + 0/(10.0*_j);
-        _j *= 10;
-        _currNum.text = [[NSString alloc]initWithFormat:@"%g", _decNum];
-    }else{
-        _wholeNum = (_wholeNum * 10)+0;
-        _currNum.text = [[NSString alloc]initWithFormat:@"%i",_wholeNum];
+-(void)editOutput:(int)code{
+    switch(code){
+        case 1://number pressed
+            _currNum.text = [[NSString alloc]initWithFormat:@"%g",_decNum];
+            break;
+        case 2://add
+            break;
+        case 3://sub
+            break;
+        case 4://mul
+            break;
+        case 5://div
+            break;
+        default:
+            break;
     }
 }
 
 - (IBAction)makeDecimal:(id)sender {
     if(!_isDec){
         _isDec = YES;
-        _decNum += _wholeNum;
-        _currNum.text = [[NSString alloc]initWithFormat:@"%g",_decNum];
     }
     
 }
@@ -147,7 +60,6 @@
 - (IBAction)clear:(id)sender {
     _isDec = NO;
     _j = 1;
-    _wholeNum = 0;
     _decNum = 0.0;
     if ([_currNum.text isEqualToString:@"0"]) {
         _history.text = @"";
@@ -159,40 +71,32 @@
 }
 
 -(void)doOperation{
-    float c;
-    if(_isDec){
-        c = _decNum;
-    }else{
-        c = _wholeNum;
-    }
+    float c = _decNum;
+    
     switch(_operation){
         case 0:
         case 1:
             _fullNum += c;
             _isDec = NO;
             _j = 1;
-            _wholeNum = 0;
             _decNum = 0.0;
             break;
         case 2:
             _fullNum -= c;
             _isDec = NO;
             _j = 1;
-            _wholeNum = 0;
             _decNum = 0.0;
             break;
         case 3:
             _fullNum *= c;
             _isDec = NO;
             _j = 1;
-            _wholeNum = 0;
             _decNum = 0.0;
             break;
         case 4:
             _fullNum /= c;
             _isDec = NO;
             _j = 1;
-            _wholeNum = 0;
             _decNum = 0.0;
             break;
         default:
@@ -230,26 +134,45 @@
 
 - (IBAction)sin:(id)sender {
     [self makeDecimal:self];
-    _decNum = sinf(_decNum);
-    //_currNum.text = [[NSString alloc]initWithFormat:@"%g",_decNum];
-    _history.text = [[NSString alloc]initWithFormat: @"%@sin(%@) ", _history.text, _currNum.text];
-    _currNum.text = @"";
+    if(_decNum != 0){
+        _decNum = sinf(_decNum);
+        //_currNum.text = [[NSString alloc]initWithFormat:@"%g",_decNum];
+        _history.text = [[NSString alloc]initWithFormat: @"%@sin(%@) ", _history.text, _currNum.text];
+        _currNum.text = @"";
+    }else{
+        _fullNum = sinf(_fullNum);
+        //_currNum.text = [[NSString alloc]initWithFormat:@"%g",_decNum];
+        _history.text = [[NSString alloc]initWithFormat: @"%@sin(%g) ", _history.text, _fullNum];
+        _currNum.text = @"";
+    }
     [self equals:self];
 }
 
 - (IBAction)cos:(id)sender {
     [self makeDecimal:self];
+    if(_decNum != 0){
     _decNum = cosf(_decNum);
     _history.text = [[NSString alloc]initWithFormat: @"%@cos(%@) ", _history.text, _currNum.text];
     _currNum.text = @"";
+    }else{
+        _fullNum = cosf(_fullNum);
+        _history.text = [[NSString alloc]initWithFormat: @"%@cos(%g) ", _history.text, _fullNum];
+        _currNum.text = @"";
+    }
     [self equals:self];
 }
 
 - (IBAction)sqrt:(id)sender {
     [self makeDecimal:self];
+    if(_decNum != 0){
     _decNum = sqrtf(_decNum);
     _history.text = [[NSString alloc]initWithFormat: @"%@sqrt(%@) ", _history.text, _currNum.text];
     _currNum.text = @"";
+    }else{
+        _fullNum = sqrtf(_fullNum);
+        _history.text = [[NSString alloc]initWithFormat: @"%@sqrt(%g) ", _history.text, _fullNum];
+        _currNum.text = @"";
+    }
     [self equals:self];
 }
 
@@ -270,17 +193,14 @@
 - (IBAction)equals:(id)sender {
     [self doOperation];
     _operation = 0;
-    _history.text = [[NSString alloc] initWithFormat:@"%@%@ = ",_history.text,_currNum.text];
+    _history.text = [[NSString alloc] initWithFormat:@"%@%@ = %g ",_history.text,_currNum.text, _fullNum];
     _currNum.text = [[NSString alloc]initWithFormat:@"%g",_fullNum];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    _isDec = NO;
     _history.text = @"";
-    _j = 1;
-    _operation = 0;
 }
 
 
