@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		093CF39E3123878326C35ECF /* libPods-photostreamUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF47C7DB062EBED2A13997C /* libPods-photostreamUITests.a */; };
+		21A532745917CD757566B22D /* libPods-photostreamTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C04FD54E6422789477F01D /* libPods-photostreamTests.a */; };
 		48316C43204E064D009E2C1E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48316C42204E064D009E2C1E /* AppDelegate.m */; };
 		48316C46204E064D009E2C1E /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48316C45204E064D009E2C1E /* FirstViewController.m */; };
 		48316C49204E064D009E2C1E /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48316C48204E064D009E2C1E /* SecondViewController.m */; };
@@ -16,6 +18,7 @@
 		48316C54204E064D009E2C1E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48316C53204E064D009E2C1E /* main.m */; };
 		48316C5E204E064D009E2C1E /* photostreamTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48316C5D204E064D009E2C1E /* photostreamTests.m */; };
 		48316C69204E064E009E2C1E /* photostreamUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48316C68204E064E009E2C1E /* photostreamUITests.m */; };
+		B65B5209BE06485BC7120AF1 /* libPods-photostream.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DAAE28240FDC97C3A330ED73 /* libPods-photostream.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0EF47C7DB062EBED2A13997C /* libPods-photostreamUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-photostreamUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		19FE6184BD3A340E70860FC9 /* Pods-photostreamTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photostreamTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-photostreamTests/Pods-photostreamTests.release.xcconfig"; sourceTree = "<group>"; };
+		34C04FD54E6422789477F01D /* libPods-photostreamTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-photostreamTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48316C3E204E064D009E2C1E /* photostream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = photostream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48316C41204E064D009E2C1E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		48316C42204E064D009E2C1E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -54,6 +60,12 @@
 		48316C64204E064E009E2C1E /* photostreamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = photostreamUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48316C68204E064E009E2C1E /* photostreamUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = photostreamUITests.m; sourceTree = "<group>"; };
 		48316C6A204E064E009E2C1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68EA04433F9043211BF081B0 /* Pods-photostream.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photostream.debug.xcconfig"; path = "Pods/Target Support Files/Pods-photostream/Pods-photostream.debug.xcconfig"; sourceTree = "<group>"; };
+		6FF7B732D1BE3DE066FD7194 /* Pods-photostream.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photostream.release.xcconfig"; path = "Pods/Target Support Files/Pods-photostream/Pods-photostream.release.xcconfig"; sourceTree = "<group>"; };
+		703B8F6264F133ED2C6E8C8A /* Pods-photostreamUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photostreamUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-photostreamUITests/Pods-photostreamUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7223BC5AA11D0C4D4EE3A6B2 /* Pods-photostreamTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photostreamTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-photostreamTests/Pods-photostreamTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DAAE28240FDC97C3A330ED73 /* libPods-photostream.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-photostream.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB234E6CA98032333A5EECF2 /* Pods-photostreamUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photostreamUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-photostreamUITests/Pods-photostreamUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B65B5209BE06485BC7120AF1 /* libPods-photostream.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21A532745917CD757566B22D /* libPods-photostreamTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				093CF39E3123878326C35ECF /* libPods-photostreamUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +103,8 @@
 				48316C5C204E064D009E2C1E /* photostreamTests */,
 				48316C67204E064E009E2C1E /* photostreamUITests */,
 				48316C3F204E064D009E2C1E /* Products */,
+				89385E18408B6B0F0E4D376A /* Pods */,
+				6572966DB8FB56CC107B21DA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,6 +154,29 @@
 			path = photostreamUITests;
 			sourceTree = "<group>";
 		};
+		6572966DB8FB56CC107B21DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DAAE28240FDC97C3A330ED73 /* libPods-photostream.a */,
+				34C04FD54E6422789477F01D /* libPods-photostreamTests.a */,
+				0EF47C7DB062EBED2A13997C /* libPods-photostreamUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		89385E18408B6B0F0E4D376A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				68EA04433F9043211BF081B0 /* Pods-photostream.debug.xcconfig */,
+				6FF7B732D1BE3DE066FD7194 /* Pods-photostream.release.xcconfig */,
+				7223BC5AA11D0C4D4EE3A6B2 /* Pods-photostreamTests.debug.xcconfig */,
+				19FE6184BD3A340E70860FC9 /* Pods-photostreamTests.release.xcconfig */,
+				FB234E6CA98032333A5EECF2 /* Pods-photostreamUITests.debug.xcconfig */,
+				703B8F6264F133ED2C6E8C8A /* Pods-photostreamUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,9 +184,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48316C6D204E064E009E2C1E /* Build configuration list for PBXNativeTarget "photostream" */;
 			buildPhases = (
+				932E3FAB3BC961E2E760DF3A /* [CP] Check Pods Manifest.lock */,
 				48316C3A204E064D009E2C1E /* Sources */,
 				48316C3B204E064D009E2C1E /* Frameworks */,
 				48316C3C204E064D009E2C1E /* Resources */,
+				5B2D67E3136E552F5EFF173E /* [CP] Embed Pods Frameworks */,
+				BFE996BBA0E989BD31EB35C5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -161,9 +204,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48316C70204E064E009E2C1E /* Build configuration list for PBXNativeTarget "photostreamTests" */;
 			buildPhases = (
+				E1D3E6F8D796D14015A21A0B /* [CP] Check Pods Manifest.lock */,
 				48316C55204E064D009E2C1E /* Sources */,
 				48316C56204E064D009E2C1E /* Frameworks */,
 				48316C57204E064D009E2C1E /* Resources */,
+				AC438485F858B039ABC10D66 /* [CP] Embed Pods Frameworks */,
+				2745823B5E17C786EF971614 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -179,9 +225,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48316C73204E064E009E2C1E /* Build configuration list for PBXNativeTarget "photostreamUITests" */;
 			buildPhases = (
+				D9C7E8BCDCC39C333C831801 /* [CP] Check Pods Manifest.lock */,
 				48316C60204E064E009E2C1E /* Sources */,
 				48316C61204E064E009E2C1E /* Frameworks */,
 				48316C62204E064E009E2C1E /* Resources */,
+				78CF5968C86D6CC4A09641AF /* [CP] Embed Pods Frameworks */,
+				E9C07EFDC838EAD8208FF7E3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -264,6 +313,153 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2745823B5E17C786EF971614 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-photostreamTests/Pods-photostreamTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5B2D67E3136E552F5EFF173E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-photostream/Pods-photostream-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		78CF5968C86D6CC4A09641AF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-photostreamUITests/Pods-photostreamUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		932E3FAB3BC961E2E760DF3A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-photostream-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC438485F858B039ABC10D66 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-photostreamTests/Pods-photostreamTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BFE996BBA0E989BD31EB35C5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-photostream/Pods-photostream-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9C7E8BCDCC39C333C831801 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-photostreamUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E1D3E6F8D796D14015A21A0B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-photostreamTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9C07EFDC838EAD8208FF7E3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-photostreamUITests/Pods-photostreamUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		48316C3A204E064D009E2C1E /* Sources */ = {
@@ -434,6 +630,7 @@
 		};
 		48316C6E204E064E009E2C1E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 68EA04433F9043211BF081B0 /* Pods-photostream.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -448,6 +645,7 @@
 		};
 		48316C6F204E064E009E2C1E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FF7B732D1BE3DE066FD7194 /* Pods-photostream.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -462,6 +660,7 @@
 		};
 		48316C71204E064E009E2C1E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7223BC5AA11D0C4D4EE3A6B2 /* Pods-photostreamTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -477,6 +676,7 @@
 		};
 		48316C72204E064E009E2C1E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19FE6184BD3A340E70860FC9 /* Pods-photostreamTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -492,6 +692,7 @@
 		};
 		48316C74204E064E009E2C1E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB234E6CA98032333A5EECF2 /* Pods-photostreamUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y2LLS8T9Z5;
@@ -506,6 +707,7 @@
 		};
 		48316C75204E064E009E2C1E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 703B8F6264F133ED2C6E8C8A /* Pods-photostreamUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y2LLS8T9Z5;

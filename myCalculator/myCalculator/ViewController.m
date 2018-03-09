@@ -35,7 +35,9 @@
 -(void)editOutput:(int)code routing:(int)p{
     switch(code){
         case 1://number pressed
-            _currNum.text = [[NSString alloc]initWithFormat:@"%g",_decNum];
+            // TODO - learn difference _currName and self.currName
+            //_currNum.text = [[NSString alloc]initWithFormat:@"%g",_decNum];
+            _currNum.text = @(_decNum).stringValue;
             break;
         case 2://add
             _history.text = [[NSString alloc]initWithFormat: @"%@%@ + ", _history.text, _currNum.text];
@@ -91,7 +93,8 @@
             break;
         case 10:
             _history.text = [[NSString alloc] initWithFormat:@"%@%@ = ",_history.text,_currNum.text];
-            _currNum.text = [[NSString alloc]initWithFormat:@"%g",_fullNum];
+            //_currNum.text = [[NSString alloc]initWithFormat:@"%g",_fullNum];
+            _currNum.text = @(_fullNum).stringValue;
         default:
             break;
     }
@@ -100,6 +103,7 @@
 - (IBAction)makeDecimal:(id)sender {
     if(!_isDec){
         _isDec = YES;
+        _currNum.text = [NSString stringWithFormat:@"%g.",_decNum];
     }
     
 }
@@ -113,6 +117,9 @@
         _operation = 0;
         _fullNum = 0;
     }else{
+        if(_operation == 0 && _history.text != @""){
+            _history.text = [[NSString alloc]initWithFormat: @"%@%@ ", _history.text, _currNum.text];
+        }
         _currNum.text = @"0";
     }
 }
@@ -235,6 +242,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     _history.text = @"";
+    _currNum.adjustsFontSizeToFitWidth = YES;
 }
 
 
