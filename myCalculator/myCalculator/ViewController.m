@@ -228,7 +228,7 @@
 }
 
 - (IBAction)sin:(id)sender {
-    [self makeDecimal:self];
+    //[self makeDecimal:self];
     if(_decNum != 0){
         _decNum = sinf(_decNum);
         if(_decNum < .0000001 && _decNum > -.0000001){
@@ -248,7 +248,7 @@
 }
 
 - (IBAction)cos:(id)sender {
-    [self makeDecimal:self];
+    //[self makeDecimal:self];
     if(_decNum != 0){
         _decNum = cosf(_decNum);
         [self editOutput:7 routing:0];
@@ -260,7 +260,7 @@
 }
 
 - (IBAction)sqrt:(id)sender {
-    [self makeDecimal:self];
+    //[self makeDecimal:self];
     if(_decNum != 0){
         _decNum = sqrtf(_decNum);
         [self editOutput:8 routing:0];
