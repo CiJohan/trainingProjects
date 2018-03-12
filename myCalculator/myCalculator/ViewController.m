@@ -16,12 +16,18 @@
 @property (nonatomic) BOOL isDec;
 @property (nonatomic) int j;
 @property (nonatomic) int operation;
+@property (nonatomic) int reset;
 
 @end
 
 @implementation ViewController
 
 - (IBAction)number:(id)sender{
+    if(_reset == 1){
+        [self clear:sender];
+        [self clear:sender];
+        _reset = 0;
+    }
     if(_isDec){
         _decNum = _decNum + [sender currentTitle].intValue/(10.0*_j);
         _j *= 10;
@@ -40,28 +46,53 @@
             _currNum.text = @(_decNum).stringValue;
             break;
         case 2://add
-            _history.text = [[NSString alloc]initWithFormat: @"%@%@ + ", _history.text, _currNum.text];
-            _currNum.text = @"0";
+            if(_reset == 1){
+                _history.text = [[NSString alloc]initWithFormat: @"%@ans + ", _history.text];
+                _currNum.text = @"0";
+            }else{
+                _history.text = [[NSString alloc]initWithFormat: @"%@%@ + ", _history.text, _currNum.text];
+                _currNum.text = @"0";
+            }
             break;
         case 3://sub
-            _history.text = [[NSString alloc]initWithFormat: @"%@%@ - ", _history.text, _currNum.text];
-            _currNum.text = @"0";
+            if(_reset == 1){
+                _history.text = [[NSString alloc]initWithFormat: @"%@ans - ", _history.text];
+                _currNum.text = @"0";
+            }else{
+                _history.text = [[NSString alloc]initWithFormat: @"%@%@ - ", _history.text, _currNum.text];
+                _currNum.text = @"0";
+            }
             break;
         case 4://mul
-            _history.text = [[NSString alloc]initWithFormat: @"%@%@ * ", _history.text, _currNum.text];
-            _currNum.text = @"0";
+            if(_reset == 1){
+                _history.text = [[NSString alloc]initWithFormat: @"%@ans * ", _history.text];
+                _currNum.text = @"0";
+            }else{
+                _history.text = [[NSString alloc]initWithFormat: @"%@%@ * ", _history.text, _currNum.text];
+                _currNum.text = @"0";
+            }
             break;
         case 5://div
-            _history.text = [[NSString alloc]initWithFormat: @"%@%@ / ", _history.text, _currNum.text];
-            _currNum.text = @"0";
+            if(_reset == 1){
+                _history.text = [[NSString alloc]initWithFormat: @"%@ans / ", _history.text];
+                _currNum.text = @"0";
+            }else{
+                _history.text = [[NSString alloc]initWithFormat: @"%@%@ / ", _history.text, _currNum.text];
+                _currNum.text = @"0";
+            }
             break;
         case 6://sin
             if(p == 0){
                 _history.text = [[NSString alloc]initWithFormat: @"%@sin(%@) ", _history.text, _currNum.text];
                 _currNum.text = @"";
             }else{
-                _history.text = [[NSString alloc]initWithFormat: @"%@sin(%g) ", _history.text, _fullNum];
-                _currNum.text = @"";
+                if(_reset == 1){
+                    _history.text = [[NSString alloc]initWithFormat: @"%@%g; sin(ans) ", _history.text, _fullNum];
+                    _currNum.text = @"";
+                }else{
+                    _history.text = [[NSString alloc]initWithFormat: @"%@sin(%g) ", _history.text, _fullNum];
+                    _currNum.text = @"";
+                }
             }
             break;
         case 7://cos
@@ -69,8 +100,13 @@
                 _history.text = [[NSString alloc]initWithFormat: @"%@cos(%@) ", _history.text, _currNum.text];
                 _currNum.text = @"";
             }else{
-                _history.text = [[NSString alloc]initWithFormat: @"%@cos(%g) ", _history.text, _fullNum];
-                _currNum.text = @"";
+                if(_reset == 1){
+                    _history.text = [[NSString alloc]initWithFormat: @"%@%g; cos(ans) ", _history.text, _fullNum];
+                    _currNum.text = @"";
+                }else{
+                    _history.text = [[NSString alloc]initWithFormat: @"%@cos(%g) ", _history.text, _fullNum];
+                    _currNum.text = @"";
+                }
             }
             break;
         case 8://sqrt
@@ -78,8 +114,13 @@
                 _history.text = [[NSString alloc]initWithFormat: @"%@sqrt(%@) ", _history.text, _currNum.text];
                 _currNum.text = @"";
             }else{
-                _history.text = [[NSString alloc]initWithFormat: @"%@sqrt(%g) ", _history.text, _fullNum];
-                _currNum.text = @"";
+                if(_reset == 1){
+                    _history.text = [[NSString alloc]initWithFormat: @"%@%g; sqrt(ans) ", _history.text, _fullNum];
+                    _currNum.text = @"";
+                }else{
+                    _history.text = [[NSString alloc]initWithFormat: @"%@sqrt(%g) ", _history.text, _fullNum];
+                    _currNum.text = @"";
+                }
             }
             break;
         case 9://pi
@@ -162,36 +203,46 @@
     [self doOperation];
     _operation = 1;
     [self editOutput:2 routing:0];
+    _reset = 0;
 }
 
 - (IBAction)subtract:(id)sender {
     [self doOperation];
     _operation = 2;
     [self editOutput:3 routing:0];
+    _reset = 0;
 }
 
 - (IBAction)multiply:(id)sender {
     [self doOperation];
     _operation = 3;
     [self editOutput:4 routing:0];
+    _reset = 0;
 }
 
 - (IBAction)divide:(id)sender {
     [self doOperation];
     _operation = 4;
     [self editOutput:5 routing:0];
+    _reset = 0;
 }
 
 - (IBAction)sin:(id)sender {
     [self makeDecimal:self];
     if(_decNum != 0){
         _decNum = sinf(_decNum);
+        if(_decNum < .0000001 && _decNum > -.0000001){
+            _decNum = 0;
+        }
         //_currNum.text = [[NSString alloc]initWithFormat:@"%g",_decNum];
         [self editOutput:6 routing:0];
     }else{
         //_currNum.text = [[NSString alloc]initWithFormat:@"%g",_decNum];
         [self editOutput:6 routing:1];
         _fullNum = sinf(_fullNum);
+        if(_fullNum < .0000001 && _fullNum > -.0000001){
+            _fullNum = 0;
+        }
     }
     [self equals:self];
 }
@@ -222,6 +273,11 @@
 
 - (IBAction)pi:(id)sender {
     [self makeDecimal:self];
+    if(_reset == 1){
+        [self clear:sender];
+        [self clear:sender];
+        _reset = 0;
+    }
     if(_decNum != 0){
         [self editOutput:9 routing:0];
         _decNum = _decNum * M_PI;
@@ -229,12 +285,14 @@
         [self editOutput:9 routing:1];
         _decNum = M_PI;
     }
+        
     [self equals:self];
 }
 
 - (IBAction)equals:(id)sender {
     [self doOperation];
     _operation = 0;
+    _reset = 1;
     [self editOutput:10 routing:0];
 }
 
@@ -242,6 +300,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     _history.text = @"";
+    _reset = 0;
     _currNum.adjustsFontSizeToFitWidth = YES;
 }
 
