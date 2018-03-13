@@ -231,7 +231,7 @@
     //[self makeDecimal:self];
     if(_decNum != 0){
         _decNum = sinf(_decNum);
-        if(_decNum < .0000001 && _decNum > -.0000001){
+        if(_decNum < .000001 && _decNum > -.000001){
             _decNum = 0;
         }
         //_currNum.text = [[NSString alloc]initWithFormat:@"%g",_decNum];
@@ -240,7 +240,7 @@
         //_currNum.text = [[NSString alloc]initWithFormat:@"%g",_decNum];
         [self editOutput:6 routing:1];
         _fullNum = sinf(_fullNum);
-        if(_fullNum < .0000001 && _fullNum > -.0000001){
+        if(_fullNum < .000001 && _fullNum > -.000001){
             _fullNum = 0;
         }
     }

@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AFNetworking/AFNetworking.h>
+#import <SDWebImageCoder.h>
 
-@interface SecondViewController : UIViewController
+@interface SecondViewController : UIViewController <UITableViewDataSource>
 
 
 @end

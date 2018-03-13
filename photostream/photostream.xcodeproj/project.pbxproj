@@ -18,6 +18,7 @@
 		48316C54204E064D009E2C1E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48316C53204E064D009E2C1E /* main.m */; };
 		48316C5E204E064D009E2C1E /* photostreamTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48316C5D204E064D009E2C1E /* photostreamTests.m */; };
 		48316C69204E064E009E2C1E /* photostreamUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48316C68204E064E009E2C1E /* photostreamUITests.m */; };
+		48CF85792058580A00D5E154 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CF85782058580A00D5E154 /* ImageViewController.m */; };
 		B65B5209BE06485BC7120AF1 /* libPods-photostream.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DAAE28240FDC97C3A330ED73 /* libPods-photostream.a */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,8 @@
 		48316C64204E064E009E2C1E /* photostreamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = photostreamUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48316C68204E064E009E2C1E /* photostreamUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = photostreamUITests.m; sourceTree = "<group>"; };
 		48316C6A204E064E009E2C1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48CF85772058579F00D5E154 /* ImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
+		48CF85782058580A00D5E154 /* ImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		68EA04433F9043211BF081B0 /* Pods-photostream.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photostream.debug.xcconfig"; path = "Pods/Target Support Files/Pods-photostream/Pods-photostream.debug.xcconfig"; sourceTree = "<group>"; };
 		6FF7B732D1BE3DE066FD7194 /* Pods-photostream.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photostream.release.xcconfig"; path = "Pods/Target Support Files/Pods-photostream/Pods-photostream.release.xcconfig"; sourceTree = "<group>"; };
 		703B8F6264F133ED2C6E8C8A /* Pods-photostreamUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photostreamUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-photostreamUITests/Pods-photostreamUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +135,8 @@
 				48316C4F204E064D009E2C1E /* LaunchScreen.storyboard */,
 				48316C52204E064D009E2C1E /* Info.plist */,
 				48316C53204E064D009E2C1E /* main.m */,
+				48CF85772058579F00D5E154 /* ImageViewController.h */,
+				48CF85782058580A00D5E154 /* ImageViewController.m */,
 			);
 			path = photostream;
 			sourceTree = "<group>";
@@ -466,6 +471,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48CF85792058580A00D5E154 /* ImageViewController.m in Sources */,
 				48316C49204E064D009E2C1E /* SecondViewController.m in Sources */,
 				48316C43204E064D009E2C1E /* AppDelegate.m in Sources */,
 				48316C54204E064D009E2C1E /* main.m in Sources */,
@@ -636,8 +642,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y2LLS8T9Z5;
 				INFOPLIST_FILE = photostream/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.iastate.its.webdev.training.photostream;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.iastate.its.webdev.iostraining.photostream;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -651,8 +658,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y2LLS8T9Z5;
 				INFOPLIST_FILE = photostream/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.iastate.its.webdev.training.photostream;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.iastate.its.webdev.iostraining.photostream;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

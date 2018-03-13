@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2E5DB5F6D430BC8067CEA972EA6B8109"
+               BlueprintIdentifier = "8823C0FD885F14A9B054B2A491B81F82"
                BlueprintName = "Pods-photostream"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "libPods-photostream.a">
